@@ -10,6 +10,11 @@ class ApiConstants {
     return 'http://192.168.0.103:8000';
   }
 
+  static String get wsBaseUrl {
+    final base = baseUrl.replaceFirst('http://', 'ws://').replaceFirst('https://', 'wss://');
+    return base;
+  }
+
   static const String sendOtp = '/auth/send-otp';
   static const String verifyOtp = '/auth/verify-otp';
   static const String signup = '/auth/signup';
@@ -23,4 +28,7 @@ class ApiConstants {
   static const String nurses = '/nurses';
   static const String ambulanceUnits = '/ambulance/units';
   static const String ambulanceDispatch = '/ambulance/dispatch';
+  static const String conversations = '/messaging/conversations';
+  static const String aiMedicineQuery = '/ai/medicine-query';
+  static const String doctors = '/doctors';
 }

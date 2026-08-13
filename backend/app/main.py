@@ -15,6 +15,9 @@ from app.modules.lab.router import router as lab_router
 from app.modules.pharmacy.router import router as pharmacy_router
 from app.modules.nurses.router import router as nurses_router
 from app.modules.ambulance.router import router as ambulance_router
+from app.modules.messaging.router import router as messaging_router
+from app.modules.ai_assistant.router import router as ai_router
+from app.modules.auth.doctors_router import router as doctors_router
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -37,6 +40,9 @@ app.include_router(lab_router, prefix="/lab", tags=["Lab"])
 app.include_router(pharmacy_router, prefix="/pharmacy", tags=["Pharmacy"])
 app.include_router(nurses_router, prefix="/nurses", tags=["Nurses"])
 app.include_router(ambulance_router, prefix="/ambulance", tags=["Ambulance"])
+app.include_router(messaging_router, prefix="/messaging", tags=["Messaging"])
+app.include_router(ai_router, prefix="/ai", tags=["AI Assistant"])
+app.include_router(doctors_router, prefix="/doctors", tags=["Doctors"])
 
 
 

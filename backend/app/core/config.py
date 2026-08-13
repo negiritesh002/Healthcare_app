@@ -1,3 +1,4 @@
+from typing import Optional
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -7,6 +8,7 @@ class Settings(BaseSettings):
     REDIS_URL: str
     JWT_SECRET: str
     JWT_EXPIRE_MINUTES: int = 60
+    OPENAI_API_KEY: Optional[str] = None
 
     model_config = SettingsConfigDict(
         env_file=".env",

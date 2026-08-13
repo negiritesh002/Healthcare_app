@@ -6,6 +6,9 @@ import '../../lab/screens/lab_screen.dart';
 import '../../pharmacy/screens/pharmacy_screen.dart';
 import '../../nurses/screens/nurse_manager_screen.dart';
 import '../../ambulance/screens/ambulance_manager_screen.dart';
+import '../../messaging/screens/messages_list_screen.dart';
+import '../../ai_assistant/screens/ai_assistant_screen.dart';
+import '../../team_doctor/screens/team_doctor_screen.dart';
 import '../../doctor_profile/screens/doctor_profile_screen.dart';
 import '../../../core/utils/name_formatter.dart';
 
@@ -95,6 +98,51 @@ class MoreScreen extends StatelessWidget {
             const SizedBox(height: 24),
 
             // Modules Options List
+            _buildMenuTile(
+              context,
+              icon: Icons.chat_bubble_outline_rounded,
+              iconColor: const Color(0xFF0284C7),
+              title: 'Doctor Messages',
+              subtitle: 'Real-time chat with team doctors',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const MessagesListScreen()),
+                );
+              },
+            ),
+            const SizedBox(height: 12),
+
+            _buildMenuTile(
+              context,
+              icon: Icons.smart_toy_outlined,
+              iconColor: const Color(0xFF8B5CF6),
+              title: 'AI Medicine Assistant',
+              subtitle: 'Clinical pharmacology reference & query assistant',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const AIAssistantScreen()),
+                );
+              },
+            ),
+            const SizedBox(height: 12),
+
+            _buildMenuTile(
+              context,
+              icon: Icons.people_outline_rounded,
+              iconColor: const Color(0xFFEC4899),
+              title: 'Team Doctor Directory',
+              subtitle: 'Browse specialists, view profiles & connect',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const TeamDoctorScreen()),
+                );
+              },
+            ),
+            const SizedBox(height: 12),
+
             _buildMenuTile(
               context,
               icon: Icons.science_outlined,

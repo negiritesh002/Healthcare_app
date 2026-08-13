@@ -11,6 +11,9 @@ import 'features/lab/providers/lab_provider.dart';
 import 'features/pharmacy/providers/pharmacy_provider.dart';
 import 'features/nurses/providers/nurses_provider.dart';
 import 'features/ambulance/providers/ambulance_provider.dart';
+import 'features/messaging/providers/messaging_provider.dart';
+import 'features/ai_assistant/providers/ai_assistant_provider.dart';
+import 'features/team_doctor/providers/team_doctor_provider.dart';
 import 'features/dashboard/screens/main_navigation_screen.dart';
 
 void main() {
@@ -48,6 +51,15 @@ class HealthcareApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<AmbulanceProvider>(
           create: (_) => AmbulanceProvider(),
+        ),
+        ChangeNotifierProvider<MessagingProvider>(
+          create: (_) => MessagingProvider(),
+        ),
+        ChangeNotifierProvider<AIAssistantProvider>(
+          create: (_) => AIAssistantProvider(),
+        ),
+        ChangeNotifierProvider<TeamDoctorProvider>(
+          create: (_) => TeamDoctorProvider(),
         ),
       ],
       child: MaterialApp(

@@ -56,3 +56,11 @@ def create_access_token(doctor_id: str) -> str:
         "exp": expires,
     }
     return jwt.encode(payload, settings.JWT_SECRET, algorithm="HS256")
+
+
+def decode_token(token: str):
+    """Decode and verify a signed JWT token."""
+    try:
+        return jwt.decode(token, settings.JWT_SECRET, algorithms=["HS256"])
+    except Exception:
+        return None
