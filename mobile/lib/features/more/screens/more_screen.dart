@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../auth/providers/auth_provider.dart';
 import '../../lab/screens/lab_screen.dart';
 import '../../pharmacy/screens/pharmacy_screen.dart';
+import '../../nurses/screens/nurse_manager_screen.dart';
+import '../../ambulance/screens/ambulance_manager_screen.dart';
 import '../../doctor_profile/screens/doctor_profile_screen.dart';
 import '../../../core/utils/name_formatter.dart';
 
@@ -118,6 +120,36 @@ class MoreScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (_) => const PharmacyScreen()),
+                );
+              },
+            ),
+            const SizedBox(height: 12),
+
+            _buildMenuTile(
+              context,
+              icon: Icons.local_hospital_outlined,
+              iconColor: const Color(0xFFF59E0B),
+              title: 'Nurse Manager',
+              subtitle: 'Staff directory & ward patient assignments',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const NurseManagerScreen()),
+                );
+              },
+            ),
+            const SizedBox(height: 12),
+
+            _buildMenuTile(
+              context,
+              icon: Icons.airport_shuttle_outlined,
+              iconColor: const Color(0xFFEF4444),
+              title: 'Ambulance Manager',
+              subtitle: 'Active fleet status & emergency dispatches',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const AmbulanceManagerScreen()),
                 );
               },
             ),

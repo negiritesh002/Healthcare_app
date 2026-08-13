@@ -20,4 +20,7 @@ class ApiConstants {
   static const String labOrders = '/lab/orders';
   static const String medicines = '/pharmacy/medicines';
   static const String prescriptions = '/pharmacy/prescriptions';
+  static const String nurses = '/nurses';
+  static const String ambulanceUnits = '/ambulance/units';
+  static const String ambulanceDispatch = '/ambulance/dispatch';
 }

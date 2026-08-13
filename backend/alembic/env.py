@@ -14,6 +14,8 @@ import app.modules.patients.models  # noqa: F401
 import app.modules.appointments.models  # noqa: F401
 import app.modules.lab.models  # noqa: F401
 import app.modules.pharmacy.models  # noqa: F401
+import app.modules.nurses.models  # noqa: F401
+import app.modules.ambulance.models  # noqa: F401
 
 
 config = context.config

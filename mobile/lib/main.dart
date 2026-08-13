@@ -9,6 +9,8 @@ import 'features/patients/providers/patients_provider.dart';
 import 'features/appointments/providers/appointments_provider.dart';
 import 'features/lab/providers/lab_provider.dart';
 import 'features/pharmacy/providers/pharmacy_provider.dart';
+import 'features/nurses/providers/nurses_provider.dart';
+import 'features/ambulance/providers/ambulance_provider.dart';
 import 'features/dashboard/screens/main_navigation_screen.dart';
 
 void main() {
@@ -40,6 +42,12 @@ class HealthcareApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<PharmacyProvider>(
           create: (_) => PharmacyProvider(),
+        ),
+        ChangeNotifierProvider<NursesProvider>(
+          create: (_) => NursesProvider(),
+        ),
+        ChangeNotifierProvider<AmbulanceProvider>(
+          create: (_) => AmbulanceProvider(),
         ),
       ],
       child: MaterialApp(
