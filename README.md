@@ -4,18 +4,18 @@ A full-stack healthcare management platform for medical practitioners — patien
 
 Built as an end-to-end system: Flutter mobile client, FastAPI backend, PostgreSQL for persistence, Redis for caching/sessions/pub-sub, fully containerized with Docker.
 
-Features
-# Authentication — Phone + OTP verification, JWT sessions, Redis-backed OTP storage with TTL expiry
-# Patient Management — Multi-step patient intake, chief complaint tracking, severity triage
-# Appointments — Calendar-based scheduling, live dashboard stat integration, status workflow (scheduled/completed/cancelled/no-show)
-# Lab Management — Test ordering, status pipeline (pending → in progress → completed), result notes
-# Pharmacy — Shared medicine inventory, multi-item prescriptions, transaction-safe stock decrement with insufficient-stock rejection
-# Nurse Manager — Staff directory, patient assignment, duty-status tracking
-# Ambulance Dispatch — Fleet management with concurrency-safe auto-assignment (SELECT ... FOR UPDATE SKIP LOCKED), graceful handling of fleet exhaustion
-# Doctor Messaging — Real-time chat via WebSocket + Redis Pub/Sub, with per-conversation access control
-# AI Medicine Assistant — LLM-backed drug information lookup, scoped strictly to clinical queries, with mandatory disclaimer enforcement
-# Team Directory — Practice-wide doctor listing with privacy-gated contact info (phone revealed only after a conversation exists)
-Tech Stack
+# Features
+1. Authentication — Phone + OTP verification, JWT sessions, Redis-backed OTP storage with TTL expiry
+2. Patient Management — Multi-step patient intake, chief complaint tracking, severity triage
+3. Appointments — Calendar-based scheduling, live dashboard stat integration, status workflow (scheduled/completed/cancelled/no-show)
+4. Lab Management — Test ordering, status pipeline (pending → in progress → completed), result notes
+5. Pharmacy — Shared medicine inventory, multi-item prescriptions, transaction-safe stock decrement with insufficient-stock rejection
+6. Nurse Manager — Staff directory, patient assignment, duty-status tracking
+7. Ambulance Dispatch — Fleet management with concurrency-safe auto-assignment (SELECT ... FOR UPDATE SKIP LOCKED), graceful handling of fleet exhaustion
+8. Doctor Messaging — Real-time chat via WebSocket + Redis Pub/Sub, with per-conversation access control
+9. AI Medicine Assistant — LLM-backed drug information lookup, scoped strictly to clinical queries, with mandatory disclaimer enforcement
+10. Team Directory — Practice-wide doctor listing with privacy-gated contact info (phone revealed only after a conversation exists)
+# Tech Stack
 Layer	Technology
 Mobile	Flutter, Provider (state management), Dio (HTTP), WebSocket
 Backend	FastAPI, SQLAlchemy 2.0 (async), Pydantic, Alembic
@@ -39,7 +39,7 @@ backend/
   alembic/         database migrations
   docker-compose.yml
 
-Key backend patterns used throughout:
+# Key backend patterns used throughout:
 
 Cache-aside for dashboard stats (Redis, 30s TTL), invalidated on every write that affects the cached data
 Row-level locking (FOR UPDATE SKIP LOCKED) for ambulance auto-assignment to prevent race conditions under concurrent dispatch requests
